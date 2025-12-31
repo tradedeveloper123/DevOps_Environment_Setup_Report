@@ -151,16 +151,20 @@ Passwords must be changed every 30 days.
 To automate weekly backups for Apache and Nginx servers.
 
 3.1 Create Backup Directory
+
 sudo mkdir /backups
 sudo chmod 755 /backups
 
 3.2 Apache Backup Script (kailash)
+
  Create script
  sudo vi /usr/local/bin/apache_backup.sh
+
  #!/bin/bash
 DATE=$(date +%F)
 tar -czf /backups/apache_backup_$DATE.tar.gz /etc/httpd /var/www/html
 tar -tzf /backups/apache_backup_$DATE.tar.gz >> /backups/apache_verify.log
+
 <img width="1920" height="434" alt="image" src="https://github.com/user-attachments/assets/70ce2013-1fd1-4ce4-bebc-bc1842ffd0fb" />
 
 sudo chmod +x /usr/local/bin/apache_backup.sh
@@ -168,13 +172,16 @@ sudo chmod +x /usr/local/bin/apache_backup.sh
 <img width="1916" height="377" alt="image" src="https://github.com/user-attachments/assets/90c036b8-f8c2-42ea-a677-7960b56a78d8" />
 
 3.3 Nginx Backup Script (boogeyman)
+
 sudo vi /usr/local/bin/nginx_backup.sh
 
 #!/bin/bash
 DATE=$(date +%F)
 tar -czf /backups/nginx_backup_$DATE.tar.gz /etc/nginx /usr/share/nginx/html
 tar -tzf /backups/nginx_backup_$DATE.tar.gz >> /backups/nginx_verify.log
+
 <img width="1920" height="322" alt="image" src="https://github.com/user-attachments/assets/31fc7752-6f12-47aa-93c0-e9446f1ad2eb" />
+
 sudo chmod +x /usr/local/bin/nginx_backup.sh
 
 3.4 Schedule Cron Jobs

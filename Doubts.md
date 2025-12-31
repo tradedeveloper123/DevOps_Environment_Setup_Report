@@ -201,11 +201,16 @@ To create secure user accounts with isolated workspaces and enforce strong passw
 sudo useradd kailash
 sudo useradd boogeyman
 ```
-
+<img width="1920" height="324" alt="image" src="https://github.com/user-attachments/assets/2a455a85-58a4-4d1c-ae29-7fe21a8d86eb" />
+<img width="1920" height="426" alt="image" src="https://github.com/user-attachments/assets/43c435eb-13d1-443d-a32e-e0e153a87bff" />
 ```bash
 sudo passwd kailash
 sudo passwd boogeyman
 ```
+<img width="1920" height="365" alt="image" src="https://github.com/user-attachments/assets/4dce51b9-3c73-410d-9adc-eb1926a776cc" />
+<img width="1920" height="431" alt="image" src="https://github.com/user-attachments/assets/5a486b41-6e2d-46d2-a686-cdfb40e80594" />
+<img width="1920" height="386" alt="image" src="https://github.com/user-attachments/assets/a9c50eb9-2332-4b4c-85b8-1e51570717d0" />
+<img width="1920" height="410" alt="image" src="https://github.com/user-attachments/assets/8ac56a26-eb07-4f62-b578-eed9cd5390d8" />
 
 **Purpose:**
 Creates local user accounts and assigns secure passwords.
@@ -221,12 +226,13 @@ Creates local user accounts and assigns secure passwords.
 sudo mkdir -p /home/kailash/workspace
 sudo mkdir -p /home/boogeyman/workspace
 ```
-
+<img width="1920" height="344" alt="image" src="https://github.com/user-attachments/assets/cd8d47fe-c15c-4dd5-a2e0-010320277190" />
+<img width="1920" height="454" alt="image" src="https://github.com/user-attachments/assets/5aedd211-f985-458c-8cb0-c4b9bd1e7fb4" />
 ```bash
 sudo chown -R kailash:kailash /home/kailash/workspace
 sudo chown -R boogeyman:boogeyman /home/boogeyman/workspace
 ```
-
+<img width="1920" height="469" alt="image" src="https://github.com/user-attachments/assets/7297af10-84cc-4030-bcdc-189cc6b6d8c7" />
 ```bash
 sudo chmod 700 /home/kailash/workspace
 sudo chmod 700 /home/boogeyman/workspace
@@ -234,7 +240,7 @@ sudo chmod 700 /home/boogeyman/workspace
 
 **Purpose:**
 Ensures only the respective user can access their workspace.
-
+<img width="1920" height="462" alt="image" src="https://github.com/user-attachments/assets/8dd946d4-ba77-4875-8b1a-1972ac427f56" />
 ---
 
 ## 2.3 Enforce Password Policy
@@ -244,11 +250,13 @@ Ensures only the respective user can access their workspace.
 ```bash
 sudo yum install libpwquality -y
 ```
+<img width="1920" height="412" alt="image" src="https://github.com/user-attachments/assets/c3733617-e7d7-4d88-b1e5-24918c9ff8e0" />
+<img width="1920" height="343" alt="image" src="https://github.com/user-attachments/assets/372d6b13-daf5-406b-9494-18cf088ef49b" />
 
 ```bash
 rpm -qa | grep pwquality
 ```
-
+<img width="1920" height="394" alt="image" src="https://github.com/user-attachments/assets/e7a0ea11-1b29-4a2a-896a-565d915c93a4" />
 ---
 
 ### Configure Password Complexity
@@ -256,7 +264,8 @@ rpm -qa | grep pwquality
 ```bash
 sudo vi /etc/security/pwquality.conf
 ```
-
+<img width="1920" height="250" alt="image" src="https://github.com/user-attachments/assets/e1ff79ae-a450-4f43-9f7b-15dbdd9ea03e" />
+<img width="1920" height="793" alt="image" src="https://github.com/user-attachments/assets/69c9e718-2af1-4b44-9f8b-a2f81f023b9d" />
 ```ini
 minlen = 8
 dcredit = -1
@@ -264,7 +273,7 @@ ucredit = -1
 lcredit = -1
 ocredit = -1
 ```
-
+<img width="1904" height="782" alt="image" src="https://github.com/user-attachments/assets/3ad7a4ec-05ad-4727-837c-91d045abbcf2" />
 ---
 
 ### Enforce Strict PAM Rules
@@ -277,7 +286,7 @@ sudo vi /etc/pam.d/password-auth
 ```text
 password requisite pam_pwquality.so try_first_pass local_users_only retry=3 enforce_for_root
 ```
-
+<img width="1920" height="457" alt="image" src="https://github.com/user-attachments/assets/a6033750-92e5-482a-813b-23fe8ef68ee3" />
 ---
 
 ## 2.4 Enforce Password Expiry
@@ -286,7 +295,7 @@ password requisite pam_pwquality.so try_first_pass local_users_only retry=3 enfo
 sudo chage -M 30 kailash
 sudo chage -M 30 boogeyman
 ```
-
+<img width="1920" height="793" alt="image" src="https://github.com/user-attachments/assets/45d93802-1d88-4ed1-9a1c-53e4c8aba2b5" />
 ```bash
 chage -l kailash
 chage -l boogeyman
@@ -326,11 +335,12 @@ DATE=$(date +%F)
 tar -czf /backups/apache_backup_$DATE.tar.gz /etc/httpd /var/www/html
 tar -tzf /backups/apache_backup_$DATE.tar.gz >> /backups/apache_verify.log
 ```
+<img width="1920" height="434" alt="image" src="https://github.com/user-attachments/assets/70ce2013-1fd1-4ce4-bebc-bc1842ffd0fb" />
 
 ```bash
 sudo chmod +x /usr/local/bin/apache_backup.sh
 ```
-
+<img width="1916" height="377" alt="image" src="https://github.com/user-attachments/assets/90c036b8-f8c2-42ea-a677-7960b56a78d8" />
 ---
 
 ## 3.3 Nginx Backup Script (boogeyman)
@@ -349,6 +359,7 @@ tar -tzf /backups/nginx_backup_$DATE.tar.gz >> /backups/nginx_verify.log
 ```bash
 sudo chmod +x /usr/local/bin/nginx_backup.sh
 ```
+<img width="1920" height="322" alt="image" src="https://github.com/user-attachments/assets/31fc7752-6f12-47aa-93c0-e9446f1ad2eb" />
 
 ---
 
@@ -362,6 +373,7 @@ sudo crontab -e
 0 0 * * 2 /usr/local/bin/apache_backup.sh
 0 0 * * 2 /usr/local/bin/nginx_backup.sh
 ```
+<img width="1920" height="570" alt="image" src="https://github.com/user-attachments/assets/e23345c8-5c00-4a27-8991-850fc5a4f3b4" />
 
 **Note:**
 Cron jobs were temporarily modified to run every minute for testing purposes.
@@ -369,6 +381,7 @@ Cron jobs were temporarily modified to run every minute for testing purposes.
 ```bash
 * * * * * /usr/local/bin/apache_backup.sh
 ```
+<img width="1920" height="729" alt="image" src="https://github.com/user-attachments/assets/f273e658-ef23-4b53-aa84-ab4bb6a7ce10" />
 
 ---
 

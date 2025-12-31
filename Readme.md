@@ -1,6 +1,6 @@
-###Here Sarah==kailash, and mike==boogeyman
+### Here Sarah==kailash, and mike==boogeyman
 
-***Task 1: System Monitoring Setup
+## Task 1: System Monitoring Setup
 To monitor CPU, memory, disk usage, and running processes in order to detect performance issues and support capacity planning
 <img width="1920" height="826" alt="image" src="https://github.com/user-attachments/assets/9783ecd6-19db-4414-a637-6ffb31a9044a" />
 <img width="1918" height="817" alt="image" src="https://github.com/user-attachments/assets/d40205d7-b42e-4ef9-9cc7-01e06c9c2295" />

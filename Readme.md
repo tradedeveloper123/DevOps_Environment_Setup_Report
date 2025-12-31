@@ -1,15 +1,15 @@
-### Here Sarah==kailash, and mike==boogeyman
+## Here Sarah==kailash, and mike==boogeyman
 
 ## Task 1: System Monitoring Setup
-To monitor CPU, memory, disk usage, and running processes in order to detect performance issues and support capacity planning
-<img width="1920" height="826" alt="image" src="https://github.com/user-attachments/assets/9783ecd6-19db-4414-a637-6ffb31a9044a" />
+- To monitor CPU, memory, disk usage, and running processes in order to detect performance issues and support capacity     planning
+  <img width="1920" height="826" alt="image" src="https://github.com/user-attachments/assets/9783ecd6-19db-4414-a637-6ffb31a9044a" />
 <img width="1918" height="817" alt="image" src="https://github.com/user-attachments/assets/d40205d7-b42e-4ef9-9cc7-01e06c9c2295" />
 
-***Install Monitoring Tools (htop)
-Step 1: Update system packages
-sudo yum update -y
+## 1.1 Install Monitoring Tools (htop)
+ - Step 1: Update system packages
+ sudo yum update -y
 <img width="1919" height="680" alt="image" src="https://github.com/user-attachments/assets/61132330-e907-4233-80eb-c1a2dcbdb129" />
-Step 2: Install htop
+- Step 2: Install htop
 sudo yum install htop -y
 <img width="1918" height="495" alt="image" src="https://github.com/user-attachments/assets/9f5f42d6-f39e-4a3f-b959-e4153426ecae" />
 <img width="1920" height="712" alt="image" src="https://github.com/user-attachments/assets/997b07eb-0b7e-4cc7-b582-da94a898f718" />
@@ -18,12 +18,12 @@ CPU usage
 Memory consumption
 Running processes
 Load average
-Step 3: Launch htop
+- Step 3: Launch htop
 htop
 
 <img width="1919" height="402" alt="image" src="https://github.com/user-attachments/assets/578e326b-21cd-4bd4-8deb-e84a68510e7a" />
 <img width="1920" height="791" alt="image" src="https://github.com/user-attachments/assets/71e8224b-7239-4657-9082-da24afe7333b" />
-1.2 Disk Usage Monitoring
+## 1.2 Disk Usage Monitoring
 Check overall disk usage
 df -h
 
@@ -36,7 +36,7 @@ du -sh /var/*
 <img width="1920" height="342" alt="image" src="https://github.com/user-attachments/assets/82f1db43-2625-42bc-9419-b9918303fd44" />
 <img width="1920" height="572" alt="image" src="https://github.com/user-attachments/assets/e77cf2ae-d638-48f2-8c59-5bc0b0f87903" />
 
-1.3 Identify Resource-Intensive Processes
+## 1.3 Identify Resource-Intensive Processes
 ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%cpu | head
 <img width="1920" height="425" alt="image" src="https://github.com/user-attachments/assets/a30ee582-bb15-4f69-982a-c035098920ef" />
 
@@ -69,7 +69,7 @@ crontab -e
 <img width="1918" height="276" alt="image" src="https://github.com/user-attachments/assets/1751c6ba-8896-4edb-9b80-cd5a5a1d0649" />
 
 
-Task 2: User Management and Access Control
+## Task 2: User Management and Access Control
 To create secure user accounts with proper access isolation and password policies
 2.1 Create User Accounts
 sudo useradd kailash
@@ -141,12 +141,13 @@ sudo chage -M 30 boogeyman
 <img width="1920" height="793" alt="image" src="https://github.com/user-attachments/assets/45d93802-1d88-4ed1-9a1c-53e4c8aba2b5" />
 
 Verify
+
 chage -l kailash
 chage -l boogeyman
 
 Passwords must be changed every 30 days.
 
-Task 3: Backup Configuration for Web Servers
+## Task 3: Backup Configuration for Web Servers
 To automate weekly backups for Apache and Nginx servers.
 
 3.1 Create Backup Directory
